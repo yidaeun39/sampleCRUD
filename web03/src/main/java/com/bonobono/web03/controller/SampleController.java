@@ -29,6 +29,14 @@ public class SampleController {
 							// request.getParameter("sampleName")
 		// redirect가 앞에 붙을경우 request.sendRedirect
 		System.out.println("sampleName -> " + sampleName);
+		// Sample VO 객체를 생성하고 화면에서 입력받은 값을 setting
+		Sample sample = new Sample();
+		sample.setSampleName(sampleName);
+		// 값이 setting된 객체를 addSample메서드에 매개변수 자리에 넣고 호출
+		int result = sampleService.addSample(sample);
+		// 메서드가 실행, 쿼리문이 실행되어 테이블에 값이 입력될 경우 1, 그렇지 않을 경우 0을 출력
+		System.out.println("쿼리 실행 여부 -> " + result);
+		// /sampleList로 redirect
 		return "redirect:/sampleList";
 	}
 	

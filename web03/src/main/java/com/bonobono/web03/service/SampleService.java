@@ -26,8 +26,9 @@ public class SampleService {
 		return null;
 	}
 	
-	// 테이블에 값을 입력하는 메서드
+	// 테이블에 값을 추가하는 메서드
 	public int addSample(Sample sample) {
+		// 쿼리가 실행될 경우 1, 실행되지 않을 경우 0
 		int result = sampleMapper.insertSample(sample);
 		return result;
 	}
