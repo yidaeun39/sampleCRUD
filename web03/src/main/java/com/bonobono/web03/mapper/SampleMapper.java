@@ -14,4 +14,6 @@ public interface SampleMapper {
 	int insertSample(Sample sample);
 	
 	int deleteSample(Sample sample);
+	
+	Sample selectSampleOne();
 }
