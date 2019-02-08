@@ -12,6 +12,7 @@
 		<tr th:each="x : ${list}">
 			<td th:text="${x.sampleId}"></td>
 			<td th:text="${x.sampleName}"></td>
+			<!-- 앵커 태그를 통해 get방식으로 /removeSample이동시 해당 sampleId를 함께 보냄 -->
 			<td><a th:href="@{'/removeSample' + '?sampleId=' + ${x.sampleId}}" >삭제</a></td>
 		</tr>
 	</table>
