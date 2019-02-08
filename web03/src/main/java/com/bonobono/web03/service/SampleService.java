@@ -28,7 +28,8 @@ public class SampleService {
 	
 	// 테이블에 값을 입력하는 메서드
 	public int addSample(Sample sample) {
-		return 0;
+		int result = sampleMapper.insertSample(sample);
+		return result;
 	}
 	
 	// 하나의 값을 삭제하는 메서드
