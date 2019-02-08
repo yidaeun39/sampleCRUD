@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<form th:action="@{SampleController}" method="post">
+		이름 : <input type="text" name="sampleName"/> <br/>
+		<input type="submit" th:value="등록"/>
+	</form>
+</body>
