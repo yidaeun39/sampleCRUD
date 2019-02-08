@@ -6,11 +6,13 @@
 		<tr>
 			<td>ID</td>
 			<td>NAME</td>
+			<td>삭제</td>
 		</tr>
 		<!-- 반복문 -->
 		<tr th:each="x : ${list}">
 			<td th:text="${x.sampleId}"></td>
 			<td th:text="${x.sampleName}"></td>
+			<td><a th:href="@{'/removeSample' + '?sampleId=' + ${x.sampleId}}" >삭제</a></td>
 		</tr>
 	</table>
 </body>
