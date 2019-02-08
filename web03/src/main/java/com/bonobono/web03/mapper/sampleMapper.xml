@@ -21,13 +21,15 @@
 		INSERT INTO sample(
 			sample_name
 		) VALUES (
-			<!-- vo에 있는 getter 표현식으로 호출 -->
+			<!-- vo에 있는 sampleName getter 표현식으로 호출 -->
 			#{sampleName}
 		)
 	</insert>
 	
 	<!-- 아이디값을 입력해 테이블에서 해당하는 컬럼을 삭제하는 쿼리 -->
 	<delete id="deleteSample" parameterType="com.bonobono.web03.vo.Sample">
+		DELETE FROM sample
+		WHERE sample_id = '#{sampleId}'
 	</delete>
 	
 	<!-- 아이디값을 입력해 테이블에서 해당하는 컬럼을 수정하는 쿼리 -->

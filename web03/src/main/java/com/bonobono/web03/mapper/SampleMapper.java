@@ -12,4 +12,6 @@ public interface SampleMapper {
 	List<Sample> selectSampleList();
 	
 	int insertSample(Sample sample);
+	
+	int deleteSample(Sample sample);
 }
