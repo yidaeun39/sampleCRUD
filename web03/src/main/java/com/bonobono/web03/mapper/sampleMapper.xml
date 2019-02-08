@@ -14,6 +14,11 @@
 	
 	<!-- 하나의 라인을 조회하는 쿼리 -->
 	<select id="selectSampleOne" resultType="com.bonobono.web03.vo.Sample">
+		SELECT
+			sample_id AS sampleId,
+			sample_name AS sampleName
+		FROM sample
+		WHERE #{sampleId}
 	</select>
 	
 	<!-- 테이블에 값을 입력하는 쿼리 -->
