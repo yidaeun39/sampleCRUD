@@ -12,18 +12,21 @@ import com.bonobono.web03.vo.Sample;
 
 @Controller
 public class SampleController {
-	@Autowired		// 객체 생성
+	// 객체 생성
+	@Autowired		
 	private SampleService sampleService;
 	
 	// 1. 입력 폼
-	@GetMapping("/addSample")	// Get방식
+	// Get방식
+	@GetMapping("/addSample")	
 	public String addSample() {
 		// 자동으로 view 파일로 forward
 		return "addSample";		// view 이름은 template폴더(생략)의 addSample.html
 	}
 	
 	// 2. 입력 액션
-	@PostMapping	// Post방식
+	// Post방식
+	@PostMapping	
 	public String addSample(@RequestParam(value="") String sampleName) {
 							// request.getParameter("sampleName")
 		// redirect가 앞에 붙을경우 request.sendRedirect
@@ -35,7 +38,7 @@ public class SampleController {
 		int result = sampleService.addSample(sample);
 		// 메서드가 실행, 쿼리문이 실행되어 테이블에 값이 입력될 경우 1, 그렇지 않을 경우 0을 출력
 		System.out.println("입력 쿼리 실행 여부 -> " + result);
-		// /sampleList로 redirect
+		// sampleList로 redirect
 		return "redirect:/sampleList";
 	}
 	
@@ -64,6 +67,14 @@ public class SampleController {
 	}
 	
 	// 5. 수정 폼
+	@GetMapping("/selectOneSample")
+	public String selectOneSample(Model model) {
+		Sample sample = sampleService.getSampleOne();
+		// 선택된 하나의 라인의 값이 담긴 객체
+		model.addAttribute("sample", sample);
+		// sample 객체를 가지고 view 파일로 forward
+		return "modifyForm";
+	}
 	
 	// 6. 수정 액션
 }

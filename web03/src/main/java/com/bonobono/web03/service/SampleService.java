@@ -12,7 +12,8 @@ import com.bonobono.web03.vo.Sample;
 @Service
 public class SampleService {
 	// 해당하는 클래스 연결
-	@Autowired		// 객체 생성
+	// 객체 생성
+	@Autowired		
 	private SampleMapper sampleMapper;
 	
 	// 전체 리스트 출력하는 메서드
@@ -23,7 +24,9 @@ public class SampleService {
 	
 	// 하나의 리스트를 출력하는 메서드
 	public Sample getSampleOne() {
-		return null;
+		// 리턴 타입이 Sample 객체
+		Sample sample = (Sample)sampleMapper.selectSampleOne();
+		return sample;
 	}
 	
 	// 테이블에 값을 추가하는 메서드
