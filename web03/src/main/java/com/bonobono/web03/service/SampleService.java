@@ -12,12 +12,13 @@ import com.bonobono.web03.vo.Sample;
 @Service
 public class SampleService {
 	// 해당하는 클래스 연결
-	@Autowired
+	@Autowired		// 객체 생성
 	private SampleMapper sampleMapper;
 	
 	// 전체 리스트 출력하는 메서드
 	public List<Sample> getSampleList() {
-		return null;
+		List<Sample> list = sampleMapper.selectSampleList();
+		return list;
 	}
 	
 	// 하나의 리스트를 출력하는 메서드
