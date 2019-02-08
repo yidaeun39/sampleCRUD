@@ -6,7 +6,9 @@
 	<!-- 테이블 전체 리스트를 조회하는 쿼리 -->
 	<select id="selectSampleList" resultType="com.bonobono.web03.vo.Sample">
 	<!-- select는 무조건 result type이 있음. 무조건 List -->
-		SELECT sample_id, sample_name
+		SELECT
+			sample_id AS sampleId,
+			sample_name AS sampleName
 		FROM sample
 	</select>
 	
