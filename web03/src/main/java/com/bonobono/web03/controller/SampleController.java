@@ -28,6 +28,7 @@ public class SampleController {
 	public String addSample(@RequestParam(value="") String sampleName) {
 							// request.getParameter("sampleName")
 		// redirect가 앞에 붙을경우 request.sendRedirect
+		System.out.println("sampleName -> " + sampleName);
 		return "redirect:/sampleList";
 	}
 	
