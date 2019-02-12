@@ -23,9 +23,9 @@ public class SampleService {
 	}
 	
 	// 하나의 리스트를 출력하는 메서드
-	public Sample getSampleOne() {
-		// 리턴 타입이 Sample 객체
-		Sample sample = (Sample)sampleMapper.selectSampleOne();
+	public Sample getSampleOne(int sampleId) {
+		// SampleController에서 매개변수로 입력받은 sampleId의 값을 sampleMapper의 selectSampleOne메서드에 입력
+		Sample sample = sampleMapper.selectSampleOne(sampleId);
 		return sample;
 	}
 	

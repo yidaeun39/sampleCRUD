@@ -21,7 +21,7 @@ public class SampleController {
 	@GetMapping("/addSample")	
 	public String addSample() {
 		// 자동으로 view 파일로 forward
-		return "addSample";		// view 이름은 template폴더(생략)의 addSample.html
+		return "redirect:/addSample";		// view 이름은 template폴더(생략)의 addSample.html
 	}
 	
 	// 2. 입력 액션
@@ -68,8 +68,9 @@ public class SampleController {
 	
 	// 5. 수정 폼
 	@GetMapping("/selectOneSample")
-	public String selectOneSample(Model model) {
-		Sample sample = sampleService.getSampleOne();
+	public String selectOneSample(@RequestParam(value="") int sampleId, Model model) {
+		System.out.println("sampleId -> " + sampleId);
+		Sample sample = sampleService.getSampleOne(sampleId);
 		// 선택된 하나의 라인의 값이 담긴 객체
 		model.addAttribute("sample", sample);
 		// sample 객체를 가지고 view 파일로 forward

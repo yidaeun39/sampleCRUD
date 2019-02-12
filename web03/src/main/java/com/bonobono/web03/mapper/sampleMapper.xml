@@ -18,7 +18,7 @@
 			sample_id AS sampleId,
 			sample_name AS sampleName
 		FROM sample
-		WHERE #{sampleId}
+		WHERE sample_id = #{sampleId}
 	</select>
 	
 	<!-- 테이블에 값을 입력하는 쿼리 -->
