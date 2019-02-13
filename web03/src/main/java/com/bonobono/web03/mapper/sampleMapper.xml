@@ -39,6 +39,9 @@
 	
 	<!-- 아이디값을 입력해 테이블에서 해당하는 컬럼을 수정하는 쿼리 -->
 	<update id="updateSample" parameterType="com.bonobono.web03.vo.Sample">
+		UPDATE sample SET 
+			sample_name = #{sampleName}
+		WHERE sample_id = #{sampleId}
 	</update>
 	
 </mapper>

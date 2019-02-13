@@ -15,6 +15,9 @@ public class SampleController {
 	// 객체 생성
 	@Autowired		
 	private SampleService sampleService;
+	// vo 객체 생성
+	@Autowired
+	private Sample sample;
 	
 	// 1. 입력 폼
 	// Get방식
@@ -80,8 +83,15 @@ public class SampleController {
 	// 6. 수정 액션
 	@PostMapping("/modifySample")
 	public String modifySample(@RequestParam(value="") int sampleId, @RequestParam(value="") String sampleName) {
-		System.out.printf("아이디 : %d, 이름 : %s", sampleId, sampleName);
+		// 아이디와 화면에서 입력받은 수정된 이름을 매개변수로 받고 확인
+		System.out.printf("아이디 : %d, 이름 : %s \n", sampleId, sampleName);
+		// 화면에서 입력받은 값을 객체에 셋팅
+		sample.setSampleId(sampleId);
+		sample.setSampleName(sampleName);
 		
-		return null;
+		int result = sampleService.modifySample(sample);
+		System.out.println("수정 쿼리 실행 여부 -> " + result);
+		
+		return "redirect:/sampleList";
 	}
 }

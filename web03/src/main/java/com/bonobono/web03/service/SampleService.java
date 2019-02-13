@@ -44,6 +44,7 @@ public class SampleService {
 	
 	// 하나의 값을 수정하는 메서드
 	public int modifySample(Sample sample) {
-		return 0;
+		int result = sampleMapper.updateSample(sample.getSampleId(), sample.getSampleName());
+		return result;
 	}
 }
