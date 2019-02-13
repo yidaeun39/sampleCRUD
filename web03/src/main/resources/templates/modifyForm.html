@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<form th:action="@{/modifySample}" method="post">
+	<table border=1>
+		<tr>
+			<td>ID</td>
+			<td><input type="text" name="sampleId" th:value=${sample.sampleId} readonly></td>
+		</tr>
+		<tr>
+			<td>NAME</td>
+			<td><input type="text" name="sampleName" th:value=${sample.sampleName}></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="수정"></td>
+		</tr>
+	</table>
+</form>
+</body>
