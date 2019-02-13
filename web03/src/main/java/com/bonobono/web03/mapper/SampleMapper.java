@@ -11,9 +11,9 @@ import com.bonobono.web03.vo.Sample;
 public interface SampleMapper {
 	List<Sample> selectSampleList();
 	
-	int insertSample(Sample sample);
+	int insertSample(String sampleName);
 	
-	int deleteSample(Sample sample);
+	int deleteSample(int sampleId);
 
 	Sample selectSampleOne(int sampleId);
 	

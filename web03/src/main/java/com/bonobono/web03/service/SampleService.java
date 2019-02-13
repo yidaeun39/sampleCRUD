@@ -30,15 +30,15 @@ public class SampleService {
 	}
 	
 	// 테이블에 값을 추가하는 메서드
-	public int addSample(Sample sample) {
+	public int addSample(String sampleName) {
 		// 쿼리가 실행될 경우 1, 실행되지 않을 경우 0
-		int result = sampleMapper.insertSample(sample);
+		int result = sampleMapper.insertSample(sampleName);
 		return result;
 	}
 	
 	// 선택한 컬럼 하나를 삭제하는 메서드
-	public int removeSample(Sample sample) {
-		int result = sampleMapper.deleteSample(sample);
+	public int removeSample(int sampleId) {
+		int result = sampleMapper.deleteSample(sampleId);
 		return result;
 	}
 	

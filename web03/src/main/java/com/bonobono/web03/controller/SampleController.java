@@ -34,11 +34,8 @@ public class SampleController {
 							// request.getParameter("sampleName")
 		// redirect가 앞에 붙을경우 request.sendRedirect
 		System.out.println("sampleName -> " + sampleName);
-		// Sample VO 객체를 생성하고 화면에서 입력받은 값을 setting
-		Sample sample = new Sample();
-		sample.setSampleName(sampleName);
-		// 값이 setting된 객체를 addSample메서드에 매개변수 자리에 넣고 호출
-		int result = sampleService.addSample(sample);
+		// 화면에서 입력받은 값을 addSample메서드에 매개변수 자리에 넣고 호출
+		int result = sampleService.addSample(sampleName);
 		// 메서드가 실행, 쿼리문이 실행되어 테이블에 값이 입력될 경우 1, 그렇지 않을 경우 0을 출력
 		System.out.println("입력 쿼리 실행 여부 -> " + result);
 		// sampleList로 redirect
@@ -58,11 +55,8 @@ public class SampleController {
 	public String removeSample(@RequestParam(value="") int sampleId) {
 		// get방식으로 보낸 Parameter값을 매개변수로 받고 확인
 		System.out.println("sampleId -> " + sampleId);
-		// Sample객체를 생성하고 그 객체에 값을 setting
-		Sample sample = new Sample();
-		sample.setSampleId(sampleId);
 		// 값이 setting된 객체를 removeSample변수 매개변수 자리에 넣고 호출
-		int result = sampleService.removeSample(sample);
+		int result = sampleService.removeSample(sampleId);
 		// 메서드가 실행되고 쿼리가 호출되면 리턴값이 1, 아닐경우 0
 		// 콘솔창에서 쿼리 실행 여부 확인 후 sampleList로 redirect
 		System.out.println("삭제 쿼리 실행 여부 -> " + result);
