@@ -21,12 +21,12 @@ public class SampleController {
 	@GetMapping("/addSample")	
 	public String addSample() {
 		// 자동으로 view 파일로 forward
-		return "redirect:/addSample";		// view 이름은 template폴더(생략)의 addSample.html
+		return "addSample";		// view 이름은 template폴더(생략)의 addSample.html
 	}
 	
 	// 2. 입력 액션
 	// Post방식
-	@PostMapping	
+	@PostMapping("/addSample")
 	public String addSample(@RequestParam(value="") String sampleName) {
 							// request.getParameter("sampleName")
 		// redirect가 앞에 붙을경우 request.sendRedirect
@@ -78,4 +78,10 @@ public class SampleController {
 	}
 	
 	// 6. 수정 액션
+	@PostMapping("/modifySample")
+	public String modifySample(@RequestParam(value="") int sampleId, @RequestParam(value="") String sampleName) {
+		System.out.printf("아이디 : %d, 이름 : %s", sampleId, sampleName);
+		
+		return null;
+	}
 }
